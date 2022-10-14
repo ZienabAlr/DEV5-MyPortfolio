@@ -72,6 +72,15 @@ export default class Bingo {
     // document.querySelector(".bingo__overlay").style.display = "block";
     // }
 
+
+    //let cardsDone = document.querySelector(".bingo__card--done");
+    let cardsDone = document.querySelectorAll(".bingo__card--done");
+    //https://bobbyhadz.com/blog/javascript-count-number-of-elements-with-class
+    if (cardsDone.length === 5) {
+      document.querySelector(".bingo__overlay").style.display = "block";
+      //console.log("done");
+    }
+
   }
 
   static save() {
