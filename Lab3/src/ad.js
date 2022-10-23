@@ -24,13 +24,11 @@ export default class Ad {
 
                 // als de locatie bepaald is, dan voer de volgende functie (getWeather) uit met de positie als parameter (position)
                 this.getWeather.bind(this)
-                );
-
-                // get the location from the browser
+            );
+        } else {
             
-             
-
-       
+            // als de browser geen geolocation ondersteunt, dan geef een foutmelding
+            console.log('Geolocation is not supported by this browser.');
         }   
 
     }
