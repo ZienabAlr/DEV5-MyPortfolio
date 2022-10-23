@@ -16,6 +16,14 @@ export default class Ad {
 
        
     }   
+
+    gotlocation(result) {
+
+    }
+
+    errorlocation(err) {
+
+    }
     
    
 
