@@ -28,11 +28,13 @@ export default class Ad {
         this.long = result.coords.longitude; // ik wil de longitude van de resultaten van de browser (result) en dan de coordinaten (coords) en dan de longitude (longitude)
 
         //console.log(result);
+        console.log(this.lat);
+        console.log(this.long);
     }
 
     errorlocation(err) {
 
-        //console.log(err);
+        console.log(err);
 
     }
     
