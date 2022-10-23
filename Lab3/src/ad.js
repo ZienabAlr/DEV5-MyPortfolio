@@ -19,9 +19,12 @@ export default class Ad {
 
     gotlocation(result) {
 
+        console.log(result);
     }
 
     errorlocation(err) {
+
+        console.log(err);
 
     }
     
