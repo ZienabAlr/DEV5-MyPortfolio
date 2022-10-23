@@ -59,41 +59,9 @@ export default class Ad {
         // hier maak ik een nieuwe url aan met de api key en de latitude en longitude deze is nodig om 
         
 
-        const url =`https://api.weatherapi.com/v1/current.json?key${this.apiKey}&q=${lat},${lon}&aqi=no`;
-        // hier maak ik een nieuwe request aan met de url die ik hierboven heb gemaakt
-
-        // fetch is een functie die een request maakt naar een url
-        // then((response)=>response.json()): hier zeg ik dat ik de response wil omzetten naar json formaat, dit is nodig om de data te kunnen gebruiken
-        // then is een promise , een belofte dat de data er is dat die ons een response geeft
-        
-        
-       /* fetch(url) 
-        .then((response)=>response.json()) 
-        .then((data)=> {
-            
-            localStorage.setItem("weather", JSON.stringify(data)); //converts data to string and stores it in local storage, local storge means it will be stored in the browser
-
-            localStorage.setItem("timestamp", Date.now());
-            //console.log(data);
-            this.displayWeather(data);
-           
-        }); */
+        const url =`https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${lat},${lon}&aqi=no`;
+    
     }   
 
-    /*displayWeather(data){
-
-        const temp= data.current.temp_c;
-        document.querySelector(".weather__temp").innerText = temp + "°C";
-
-        const weather= data.current.condition.text;
-        document.querySelector(".weather__summary").innerText = weather;
-
-        const icon= data.current.condition.icon;
-
-        const img= document.createElement("img");
-
-        img.src =icon;
-        document.querySelector(".weather__icon").appendChild(img);
-
-    }*/
+   
 }
