@@ -26,10 +26,18 @@ export default class Ad {
                 this.getWeather.bind(this)
             );
         } else {
-            
+
             // als de browser geen geolocation ondersteunt, dan geef een foutmelding
             console.log('Geolocation is not supported by this browser.');
         }   
 
     }
+
+    getWeather(position) {
+
+        console.log(position);
+        const lat= position.coords.latitude; // hier vraag ik de latitude op uit de positie
+        const lon = position.coords.longitude; // hier vraag ik de longitude op uit de positie
+
+    }   
 }
