@@ -99,6 +99,11 @@ export default class Ad {
 
         const img= document.createElement("img"); // maak een nieuwe img aan
 
+        img.src =icon; // zet de src van de img op de icon die we hebben opgehaald uit de data
+        document.querySelector(".weather__icon").appendChild(img); // zet de img in de html
+
+        
+
        
 
     }
