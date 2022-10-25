@@ -94,7 +94,8 @@ export default class Ad {
         const weather= data.current.condition.text; //haal de weersomstandigheden uit de data
         document.querySelector(".weather__summary").innerText = weather;// zet de weersomstandigheden in de html
 
-        
+        const icon= data.current.condition.icon; //haal de icon uit de data
+
         
 
     }
