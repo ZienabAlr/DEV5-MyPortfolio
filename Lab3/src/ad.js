@@ -6,12 +6,12 @@ export default class Ad {
         this.apiKey = api_key; // de api key die we hebben gekregen van de api hierboven in de constructor zetten
         console.log(this.apiKey);
 
+        //this.getLocation();
 
-
-        /*if (
+        if ( // als de data in de local storage is en de tijd die we hebben opgeslagen in de local storage is groter dan 10 minuten dan haal de data opnieuw op
                 
             localStorage.getItem("weather")&&
-            Date.now() - localStorage.getItem("timestamp") < 600000 // 10min
+            Date.now() - localStorage.getItem("timestamp") < 600000 // 10 minuten in milliseconden
         ){
 
             const weatherData = JSON.parse(localStorage.getItem("weather"));
@@ -20,11 +20,8 @@ export default class Ad {
             
             // check our location 
             this.getLocation();
-        }*/
+        }
 
-        this.getLocation();
-
-       
 
 
        
@@ -73,12 +70,17 @@ export default class Ad {
         .then((response)=>response.json()) 
         .then((data)=> {
             
-            localStorage.setItem("weather", JSON.stringify(data)); //converts data to string and stores it in local storage, local storge means it will be stored in the browser
+            //converts data to string and stores it in local storage, local storge means it will be stored in the browser
+            localStorage.setItem("weather", JSON.stringify(data)); // waether is de naam van de key en data is de data die we willen opslaan die we hebben gekregen van de api
 
-            localStorage.setItem("timestamp", Date.now());
+            localStorage.setItem("timestamp", Date.now()); // timestamp is de naam van de key en Date.now() is de tijd die we willen opslaan 
             //console.log(data);
 
-            this.displayWeather(data); //
+            //local storage set item day
+            localStorage.setItem("day", JSON.stringify(data.current.day)); 
+
+
+            this.displayWeather(data); // hier roep ik de functie displayWeather aan en geef ik de data mee als parameter in deze functie wil ik de data gebruiken om de data weer te geven op de pagina
            
         }); 
     
