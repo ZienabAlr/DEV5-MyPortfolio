@@ -96,7 +96,10 @@ export default class Ad {
 
         const icon= data.current.condition.icon; //haal de icon uit de data
 
-        
+
+        const img= document.createElement("img"); // maak een nieuwe img aan
+
+       
 
     }
 
