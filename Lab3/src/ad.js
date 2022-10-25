@@ -91,6 +91,10 @@ export default class Ad {
         const temp= data.current.temp_c; //haal de temperatuur uit de data
         document.querySelector(".weather__temp").innerText = temp + "°C"; // zet de temperatuur in de html
 
+        const weather= data.current.condition.text; //haal de weersomstandigheden uit de data
+        document.querySelector(".weather__summary").innerText = weather;// zet de weersomstandigheden in de html
+
+        
         
 
     }
