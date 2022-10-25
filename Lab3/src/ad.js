@@ -86,6 +86,15 @@ export default class Ad {
     
     }   
 
+    displayWeather(data){
+
+        const temp= data.current.temp_c; //haal de temperatuur uit de data
+        document.querySelector(".weather__temp").innerText = temp + "°C"; // zet de temperatuur in de html
+
+        
+
+    }
+
    
 }
 
