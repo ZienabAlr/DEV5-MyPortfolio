@@ -37,6 +37,25 @@ body{
     margin-top: -20px;
 }
 
+.weather{
+    margin:  -10% 10%;
+}
+
+.weather div{
+    margin: -10% 0;
+
+}
+
+.weather__date{
+    text-align: left;
+    width: 100px;
+    line-height: 30px; 
+    margin: -30% 60%;
+    border-left: rgb(0, 0, 0) solid 1.5px;
+    padding: 0 5px
+
+}
+
 
 
 
