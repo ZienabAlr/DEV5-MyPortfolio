@@ -102,53 +102,15 @@ export default class Ad {
         img.src =icon; // zet de src van de img op de icon die we hebben opgehaald uit de data
         document.querySelector(".weather__icon").appendChild(img); // zet de img in de html
 
+        const date = data.location.localtime; //haal de datum uit de data
+        document.querySelector(".weather__date").innerText = date;// zet de datum in de html
+
         const day= data.current.is_day; //haal de dag uit de data
         if(day == 1){ // als het dag is dan:
             document.querySelector(".weather__day").innerText = "Happy Nespresso Day";// zet de dag in de html
         } else {
             document.querySelector(".weather__day").innerText = " Happy Nespresso Night";// zet de nacht in de html
         }
-        const date = data.location.localtime; //haal de datum uit de data
-        document.querySelector(".weather__date").innerText = date;// zet de datum in de html
-
-    
-        /*switch (date) {
-            case "":
-                document.querySelector(".weather__date").innerText = "Monday";
-                break;
-            case "2":
-                document.querySelector(".weather__date").innerText = "Tuesday";
-                break;
-            case "3":
-                document.querySelector(".weather__date").innerText = "Wednesday";
-                break;
-            case "4":
-                document.querySelector(".weather__date").innerText = "Thursday";
-                break;
-            case "5":
-                document.querySelector(".weather__date").innerText = "Friday";
-                break;
-            case "6":
-                document.querySelector(".weather__date").innerText = "Saturday";
-                break;
-            case "7":
-                document.querySelector(".weather__date").innerText = "Sunday";
-                break;
-            // default:
-            //     document.querySelector(".weather__date").innerText = "Monday";
-        }*/
-        // document.querySelector(".weather__date").innerText = date;// zet de datum in de html
-
-        if (date >= "5:00:00" && date <= "11:59:59") {
-            document.querySelector(".weather__date").innerText = "Good morning";
-        } else if (date >= 12 && date <= 17) {
-            document.querySelector(".weather__date").innerText = "Good afternoon";
-        } else if (date >= 18 && date <= 24) {
-            document.querySelector(".weather__date").innerText = "Good evening";
-        } //else {
-        //     document.querySelector(".weather__date").innerText = "Good night";
-        // }
-       
 
     }
 
