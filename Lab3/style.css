@@ -10,4 +10,11 @@ body{
     font-weight: 300;
     
 }
+.advertisement{
+    background-image: url("image/advertisment.jpeg");
+    width: 300px;
+    height: 600px;
+    background-size: cover;
+   
+}
 
