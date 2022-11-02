@@ -21,9 +21,6 @@ export default class Ad {
             // check our location 
             this.getLocation();
         }
-
-
-
        
     }
 
@@ -75,10 +72,6 @@ export default class Ad {
 
             localStorage.setItem("timestamp", Date.now()); // timestamp is de naam van de key en Date.now() is de tijd die we willen opslaan 
             //console.log(data);
-
-            //local storage set item day
-            //localStorage.setItem("day", JSON.stringify(data)); 
-
 
             this.displayWeather(data); // hier roep ik de functie displayWeather aan en geef ik de data mee als parameter in deze functie wil ik de data gebruiken om de data weer te geven op de pagina
            
