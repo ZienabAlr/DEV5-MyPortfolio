@@ -34,11 +34,13 @@ export default class Card {
     let card = document.createElement("div");
     card.classList.add("bingo__card");
     //card.setAttribute("class", "bingo__card");
-    card.setAttribute("data-number", "1");
-    card.setAttribute("id", "bingo__card1");
+    // card.setAttribute("data-number", ); // this is the card number (1-25)
+    card.setAttribute("id", "bingo__card"+counter); // here I would like to use the counter variable to create a unique id for each card (1-25)
     card.innerHTML = this.title;
     card.dataset.number = counter + 1;
     document.querySelector(".bingo__board").appendChild(card);
+    console.log(card);
+    
 
   
 
