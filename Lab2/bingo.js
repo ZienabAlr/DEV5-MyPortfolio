@@ -95,8 +95,9 @@ export default class Bingo {
     // remove localstorage
     // }
     // save a selection like [1, 7, 8] to localstorage item "bingo"
-
-
+    // save the index of the card in the array as the card number to localstorage
+    // localStorage.setItem("bingo", JSON.stringify(cardsWon));
+    // you might want to check out how JSON.stringify() works
     let cardsWon = [];
     let cards = document.querySelectorAll(".bingo__card--done").keys();
     for (let card of cards) {
@@ -107,61 +108,10 @@ export default class Bingo {
     } else {
       localStorage.setItem("bingo", JSON.stringify(cardsWon));
     }
-    
-
   
-    // for (let card of cards) {
-    //   cardsWon.push(card);
-    // }
-    // for (let i = 0; i < cards.length; i++) {
-    //   cardsWon.push(cards[i].dataset.card); //pushes the data-card number to the array cardsWon dataset.card is the number of the card
-    //   // cardsWon.push(cards[i]);
-    // }
-    // if (cardsWon.length === 0) {
-    //   localStorage.removeItem("bingo");
-    // } else {
-    //   let test = localStorage.setItem("bingo", JSON.stringify(cardsWon));
 
-    // }
-
-    // console.log(cardsWon)
-  
-    // save the index of the card in the array as the card number to localstorage
-    // localStorage.setItem("bingo", JSON.stringify(cardsWon));
-    // you might want to check out how JSON.stringify() works
-
-    // let cardsWon = [];
-  
-    // let cards= document.querySelectorAll(".bingo__card--done");
-    // let cardsArray = Array.from(cards);
-    // console.log(cardsArray);
-
-    // if (cardsArray.length === 0) {
-    //   localStorage.removeItem("bingo");
-    // } else {
-    //   cardsArray.forEach(card => {
-    //     let cardNumber = card.getAttribute("data-card");
-    //     cardsWon.push(cardNumber);
-    //   });
-    //   localStorage.key("bingo", JSON.stringify(cardsWon));
-    // }
   }
 
-    //et cards= []; 
-    //cards.push(card);
-
-  //   for (let i = 0; i < cards.length; i++) {
-  //     cardsWon.push(cards[i].card);
-  //   }
-  //   console.log(cardsWon);
-  //   localStorage.setItem("bingo", JSON.stringify(cardsWon));
-  //   if (cards.length === 0) {
-  //     localStorage.removeItem("bingo");
-
-  //   }
-
-
-  // } 
   static load() {
     // 🔥🔥🔥 TODO 8
     // load the cards that are done from localstorage
@@ -178,12 +128,12 @@ export default class Bingo {
 
 
     if (localStorage.getItem("bingo")) {
-        let cardsWon = JSON.parse(localStorage.getItem("bingo"));
-        for (let i = 0; i < cardsWon.length; i++) {
-          let card = document.querySelector(`[data-card="${cardsWon[i]}"]`);
-          console.log(cardsWon);
-          // card.classList.add("bingo__card--done");
-        }
+      let cardsWon = JSON.parse(localStorage.getItem("bingo"));
+      for (let card of cardsWon) {
+        document
+          .querySelectorAll(".bingo__card")
+          [card].classList.add("bingo__card--done");
       }
     }
+  }
 }
