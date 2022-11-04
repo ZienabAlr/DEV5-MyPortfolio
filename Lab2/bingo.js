@@ -119,7 +119,7 @@ export default class Bingo {
       localStorage.removeItem("bingo");
     }
     localStorage.setItem("bingo", JSON.stringify(cardsWon));
-    
+
   
 
   }
@@ -147,6 +147,15 @@ export default class Bingo {
     //       [card].classList.add("bingo__card--done");
     //   } 
     // }
+
+    if (localStorage.getItem("bingo")) {
+      let cardsWon = JSON.parse(localStorage.getItem("bingo"));
+      for (let card of cardsWon) {
+        document
+          .querySelector(`.bingo__card[data-number="${card}"]`)
+          .classList.add("bingo__card--done");
+      }
+    }
   }
     
 }
