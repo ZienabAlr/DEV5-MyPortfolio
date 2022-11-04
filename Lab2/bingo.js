@@ -52,7 +52,7 @@ export default class Bingo {
     for (let i = 0; i < this.cards.length; i++) {
         // console.log(this.cards[i]);
         let card = new Card(this.cards[i]);
-        card.render();
+        card.render(i);
       }
       // create a new card object
       // let card = new Card(this.cards[i]);
@@ -100,6 +100,7 @@ export default class Bingo {
     // you might want to check out how JSON.stringify() works
     let cardsWon = [];
     let cards = document.querySelectorAll(".bingo__card--done").keys();
+    // console.log(cards);
     for (let card of cards) {
       cardsWon.push(card);
     }
@@ -127,13 +128,14 @@ export default class Bingo {
     // .bingo__card--done
 
 
-    if (localStorage.getItem("bingo")) {
-      let cardsWon = JSON.parse(localStorage.getItem("bingo"));
-      for (let card of cardsWon) {
-        document
-          .querySelectorAll(".bingo__card")
-          [card].classList.add("bingo__card--done");
-      }
-    }
+    // if (localStorage.getItem("bingo")) {
+    //   let cardsWon = JSON.parse(localStorage.getItem("bingo"));
+    //   for (let card of cardsWon) {
+    //     document
+    //       .querySelectorAll(".bingo__card")
+    //       [card].classList.add("bingo__card--done");
+    //   } 
+    // }
   }
+    
 }
