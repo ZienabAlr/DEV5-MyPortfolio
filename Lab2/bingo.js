@@ -98,17 +98,28 @@ export default class Bingo {
     // save the index of the card in the array as the card number to localstorage
     // localStorage.setItem("bingo", JSON.stringify(cardsWon));
     // you might want to check out how JSON.stringify() works
+    // let cardsWon = [];
+    // let cards = document.querySelectorAll(".bingo__card--done").keys();
+    // // console.log(cards);
+    // for (let card of cards) {
+    //   cardsWon.push(card);
+    // }
+    // if (cardsWon.length === 0) {
+    //   localStorage.removeItem("bingo");
+    // } else {
+    //   localStorage.setItem("bingo", JSON.stringify(cardsWon));
+    // }
+
     let cardsWon = [];
-    let cards = document.querySelectorAll(".bingo__card--done").keys();
-    // console.log(cards);
+    let cards = document.querySelectorAll(".bingo__card--done");
     for (let card of cards) {
-      cardsWon.push(card);
+      cardsWon.push(card.dataset.number);
     }
     if (cardsWon.length === 0) {
       localStorage.removeItem("bingo");
-    } else {
-      localStorage.setItem("bingo", JSON.stringify(cardsWon));
     }
+    localStorage.setItem("bingo", JSON.stringify(cardsWon));
+    
   
 
   }
