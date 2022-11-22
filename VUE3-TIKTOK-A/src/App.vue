@@ -1,6 +1,7 @@
 <script setup>
 import VideoPlayer from './components/videoPlayer.vue';
 import VideoDetails from './components/videoDetails.vue';
+import VideoComments from './components/videoComments.vue';
 
 </script>
 
@@ -8,6 +9,7 @@ import VideoDetails from './components/videoDetails.vue';
   <div class="app">
    <VideoPlayer />
    <VideoDetails />
+    <VideoComments />
   </div>
  
 </template>
