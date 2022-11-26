@@ -9,18 +9,15 @@ onMounted(() => { // hier maak ik een functie die de data van de api ophaalt en 
   fetch(api_url)
   .then((response) => response.json()) // parse JSON from request into native JavaScript objects json is a method of the response object that returns a promise that resolves with the result of parsing the body text as JSON 
   .then((data) => {
-    console.log(data);
 
+      console.log(data);
+
+      data.forEach((item) => { // de data bestaat uit een array met daarin objecten, voor elk object in de array voer ik de volgende code uit 
+        messages.push(item);// ik push de objecten in de array messages
     
-    data.forEach((item) => { // de data bestaat uit een array met daarin objecten, voor elk object in de array voer ik de volgende code uit
-      
-
-      messages.push(item);// ik push de objecten in de array messages
-
-    
-  });
-
-}); 
+      });
+  }); 
+});
 
 </script>
 
