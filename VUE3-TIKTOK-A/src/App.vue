@@ -1,7 +1,7 @@
 <script setup>
 import VideoPlayer from './components/videoPlayer.vue';
 import VideoDetails from './components/videoDetails.vue';
-import VideoComments from './components/videoComments.vue';
+import VideoComments from './components/comments.vue';
 
 </script>
 
