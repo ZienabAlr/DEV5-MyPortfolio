@@ -25,7 +25,11 @@ onMounted(() => { // hier maak ik een functie die de data van de api ophaalt en 
   <div>
     <!-- hier haal ik de namen en comments uit de array messages en zet ik elke message in een ul  -->
     <!-- In elke message vraag ik de user (username) en de text (de comment) -->
-    
+    <ul v-for="item in messages" :key="item">
+      <h4>{{item.user}}</h4>
+      <p>{{item.text}}</p>
+    </ul>
+
    
   </div>
  
