@@ -30,6 +30,8 @@ onMounted(() => { // hier maak ik een functie die de data van de api ophaalt en 
       <p>{{item.text}}</p>
     </ul>
 
+    <input type="text" >
+    <button>Submit</button>
    
   </div>
  
