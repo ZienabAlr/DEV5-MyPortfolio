@@ -34,6 +34,16 @@ const postMessage = () => { // hier maak ik een functie aan die de data van de i
       text: text.value  
     }) // hier geef ik aan dat ik de data van de input wil sturen
   };
+  const api_url =' https://lab5-p379.onrender.com/api/v1/messages/';
+
+  // eerst roep ik de api aan en geef ik aan dat ik een post request wil doen
+  fetch(api_url, requestOptions)
+  .then((response) => response.json()) 
+  .then((data) => { // hier krijg ik de data terug van de api
+    
+    text.value = '';  // hier maak ik de input weer leeg na het versturen van de data 
+  
+  });
 }
 
 </script>
