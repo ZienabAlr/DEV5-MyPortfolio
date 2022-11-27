@@ -16,6 +16,9 @@ let text = ref(''); // hier maak ik een variabele aan waar ik de text in kan sto
     data.forEach((item) => { // de data bestaat uit een array met daarin objecten, voor elk object in de array voer ik de volgende code uit 
     messages.push(item);// ik push de objecten in de array messages
 
+    // reverse the array to show the newest message on top
+    messages.reverse(); // ik draai de array om zodat de nieuwste bovenaan komt te staan
+    
     });
 
   }); 
