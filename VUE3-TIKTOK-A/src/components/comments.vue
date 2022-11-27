@@ -22,7 +22,19 @@ let text = ref(''); // hier maak ik een variabele aan waar ik de text in kan sto
 
 });
 
+// Een functie die een post request maakt naar de api om de data te posten
 
+const postMessage = () => { // hier maak ik een functie aan die de data van de input in de api stopt
+  //Hieronder maak ik een object (variabele) aan met daarin de data die ik wil posten
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      user: 'Zienab',
+      text: text.value  
+    }) // hier geef ik aan dat ik de data van de input wil sturen
+  };
+}
 
 </script>
 
