@@ -80,6 +80,17 @@ const postMessage = () => { // hier maak ik een functie aan die de data van de i
 
 <style scoped>
 
+.comments{
+  padding:  0 1rem;
+  /*align div to the right*/
+  position: absolute;
+  right: 50px;
+  top: 150px;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(184, 184, 184, 0.457);
+  border-radius: 10px;
+  padding: 1.5rem 2.5rem;
+}
 
 
 </style>
