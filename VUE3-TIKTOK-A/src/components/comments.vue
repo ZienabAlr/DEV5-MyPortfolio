@@ -48,7 +48,7 @@ const postMessage = () => { // hier maak ik een functie aan die de data van de i
   .then((data) => { // hier krijg ik de data terug van de api
 
     console.log(data);
-    messages.push(data); // hier push ik de data die ik terug krijg van de api in de array data.data de data van de data die ik terug krijg van de api
+    messages.data.push(data.data); // hier push ik de data die ik terug krijg van de api in de array data.data de data van de data die ik terug krijg van de api
     //messages.data.unshift(data.data); 
     // unshift voegt een element toe aan het begin van de array
     
