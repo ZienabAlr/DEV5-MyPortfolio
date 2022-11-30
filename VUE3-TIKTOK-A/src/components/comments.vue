@@ -2,7 +2,7 @@
 import {onMounted, reactive, ref} from 'vue';
 
 
-let messages = reactive([]); // hier maak ik een array waar ik de info van de messages in kan stoppen (namen en comments)"reactive" is een functie die een object maakt dat reageert op veranderingen in de data die erin zit 
+let messages = reactive({data:[]}); // hier maak ik een array waar ik de info van de messages in kan stoppen (namen en comments)"reactive" is een functie die een object maakt dat reageert op veranderingen in de data die erin zit 
 // messages is een object met een property data die een array is 
 // messages.data is een array met objects in
 
