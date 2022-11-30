@@ -100,6 +100,17 @@ const postMessage = () => { // hier maak ik een functie aan die de data van de i
   font-size: 1rem;
   font-family: 'Roboto', sans-serif;
 }
+.btn{
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f2f2f2;
+  cursor: pointer;
+}
+
 
 
 </style>
