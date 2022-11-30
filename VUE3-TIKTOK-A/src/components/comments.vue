@@ -1,29 +1,32 @@
 <script setup>
 import {onMounted, reactive, ref} from 'vue';
 
+
 let messages = reactive([]); // hier maak ik een array waar ik de info van de messages in kan stoppen (namen en comments)"reactive" is een functie die een object maakt dat reageert op veranderingen in de data die erin zit 
-let text = ref(''); // hier maak ik een variabele aan waar ik de text in kan stoppen
+// messages is een object met een property data die een array is 
+// messages.data is een array met objects in
+
+let text = ref(""); 
 
 
- onMounted(() => { // hier maak ik een functie die de data van de api ophaalt en in de array stopt
+onMounted(() => { // hier maak ik een functie die de data van de api ophaalt en in de array stopt
  
   const api_url =' https://lab5-p379.onrender.com/api/v1/messages/';
   fetch(api_url)
   .then((response) => response.json()) // parse JSON from request into native JavaScript objects json is a method of the response object that returns a promise that resolves with the result of parsing the body text as JSON 
   .then((data) => {
 
-    console.log(api_url);
-    data.forEach((item) => { // de data bestaat uit een array met daarin objecten, voor elk object in de array voer ik de volgende code uit 
-    messages.push(item);// ik push de objecten in de array messages
+    messages.data=data;
+    // delete the first 14 messages
+    messages.data.splice(0,340);
 
-    // reverse the array to show the newest message on top
-    messages.reverse(); // ik draai de array om zodat de nieuwste bovenaan komt te staan
-    
-    });
-
+   
   }); 
 
+  
+
 });
+
 
 // Een functie die een post request maakt naar de api om de data te posten
 
@@ -43,25 +46,33 @@ const postMessage = () => { // hier maak ik een functie aan die de data van de i
   fetch(api_url, requestOptions)
   .then((response) => response.json()) 
   .then((data) => { // hier krijg ik de data terug van de api
+
+    console.log(data);
+    messages.push(data); // hier push ik de data die ik terug krijg van de api in de array data.data de data van de data die ik terug krijg van de api
+    //messages.data.unshift(data.data); 
+    // unshift voegt een element toe aan het begin van de array
     
-    text.value = '';  // hier maak ik de input weer leeg na het versturen van de data 
+    text.value = "";  // hier maak ik de input weer leeg na het versturen van de data 
+    
   
   });
+
+
 }
 
 </script>
 
 <template>
-  <div>
+  <div class="comments">
     <!-- hier haal ik de namen en comments uit de array messages en zet ik elke message in een ul  -->
     <!-- In elke message vraag ik de user (username) en de text (de comment) -->
-    <ul v-for="item in messages" :key="item">
+    <ul v-for="item in messages.data" :key="item">
       <h4>{{item.user}}</h4>
       <p>{{item.text}}</p>
     </ul>
 
-    <input type="text" placeholder="Add comment" v-model="text" >
-    <button @click="postMessage">Post</button>
+    <input class ="input" type="text" placeholder="Add comment" v-model="text" >
+    <button class ="btn" @click.prevent="postMessage">Post</button>
    
   </div>
  
@@ -69,7 +80,6 @@ const postMessage = () => { // hier maak ik een functie aan die de data van de i
 
 <style scoped>
 
-.video_details{
-  padding: 0 1rem;
-}
+
+
 </style>
