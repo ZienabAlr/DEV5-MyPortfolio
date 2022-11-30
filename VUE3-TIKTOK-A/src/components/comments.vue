@@ -91,6 +91,15 @@ const postMessage = () => { // hier maak ik een functie aan die de data van de i
   border-radius: 10px;
   padding: 1.5rem 2.5rem;
 }
+.input{
+  /* width: 100%; */
+  padding: 0.5rem ;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
 
 
 </style>
