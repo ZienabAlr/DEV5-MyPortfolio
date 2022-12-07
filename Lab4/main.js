@@ -119,7 +119,9 @@ for (let i = 0; i < 20; i++) {
   sign = Math.random() < 0.5 ? 1 : 1.6;//random sign for y and z   < 0.5 ? 1 : -1; betekent dat er een 50% kans is dat het 1 is en een 50% kans dat het -1 is
   const y = Math.random() * 30* sign; // random y position between -10 and 10   
   
- 
+  sign = Math.random() < 0.5 ? 1 : -1; //diepte 
+  const z = Math.random() * 30* sign;
+  addDiamond(x, y, z);
 }
 
 function animate() {
