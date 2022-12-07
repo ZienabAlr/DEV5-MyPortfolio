@@ -33,4 +33,16 @@ material.side = THREE.BackSide;
 const sphere = new THREE.Mesh( geometry, material );
 scene.add( sphere );
 
+//water ground
+
+const loaderWater = new THREE.TextureLoader();
+const textureWater = loaderWater.load('textures/water.webp');
+const waterGeometry = new THREE.BoxGeometry( 50, 0.25, 50 );
+const waterMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+waterMaterial.map = textureWater;
+const water = new THREE.Mesh( waterGeometry, waterMaterial );
+scene.add( water );
+water.position.y = -4;
+
+
 
