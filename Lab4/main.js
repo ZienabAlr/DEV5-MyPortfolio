@@ -101,6 +101,15 @@ whiteBoard.position.x = -1.5;
 whiteBoard.position.z = -5.5;
 
 
+const addDiamond = (x,y,z) => {
+
+  const diamondGeometry = new THREE.IcosahedronGeometry( 1, 0 );
+  const diamondMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
+  const diamond= new THREE.Mesh( diamondGeometry, diamondMaterial );
+  scene.add( diamond );
+  diamond.position.set(x, y, z); // positie van de diamant
+
+}
 function animate() {
   requestAnimationFrame( animate );
   renderer.render( scene, camera );
