@@ -137,6 +137,7 @@ const gltfLoader = new GLTFLoader();// liever van boven defineren en dan pas aan
     scene.add(gltf.scene);
 
     guardianBird.scale.set(0.02, 0.02, 0.02);
+    guardianBird.position.set(1, 15, 1);
   });
 
 function animate() {
