@@ -54,14 +54,23 @@ const house = new THREE.Mesh( houseGeometry, houseMaterial );
 scene.add( house );
 house.position.y = 2.5;
 
-
 //second floor
 const houseGeometry2 = new THREE.BoxGeometry(4.5, 1.5, 4.5 );
 const houseMaterial2 = new THREE.MeshBasicMaterial( { color: 0x00000 } );
 const house2 = new THREE.Mesh( houseGeometry2, houseMaterial2 );
 scene.add( house2 );
 house2.position.y = 0.3;
- house2.rotation.y = 0.7;
+house2.rotation.y = 0.7;
+
+//third floor 
+const loaderWood2 = new THREE.TextureLoader();
+const textureWood2 = loaderWater.load('textures/wood.webp');
+const houseGeometry3 = new THREE.BoxGeometry( 5, 3, 5); 
+const houseMaterial3 = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+houseMaterial3.map = textureWood2;
+const house3 = new THREE.Mesh( houseGeometry3, houseMaterial3 );
+scene.add( house3 );
+house3.position.y = -2;
 
 function animate() {
   requestAnimationFrame( animate );
