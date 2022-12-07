@@ -89,6 +89,17 @@ plane2.position.y = 4.5;
 plane2.rotation.x = -0.9;
 plane2.position.z = 1.93;
 
+//White board
+const boardGeometry = new THREE.BoxGeometry( 0.1, 5, 5 );
+const boardMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff } );
+const BoardTexture = loader.load('textures/Zienab.webp');
+const whiteBoard = new THREE.Mesh( boardGeometry, boardMaterial );
+whiteBoard.material.map = BoardTexture;
+scene.add( whiteBoard );
+whiteBoard.position.y = -1.5;
+whiteBoard.position.x = -1.5;
+whiteBoard.position.z = -5.5;
+
 
 function animate() {
   requestAnimationFrame( animate );
