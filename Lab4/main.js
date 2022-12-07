@@ -72,6 +72,24 @@ const house3 = new THREE.Mesh( houseGeometry3, houseMaterial3 );
 scene.add( house3 );
 house3.position.y = -2;
 
+// roof
+const planeGeometry = new THREE.PlaneGeometry( 5, 5 );
+const planeMaterial = new THREE.MeshBasicMaterial( {color: 0x000000, side: THREE.DoubleSide} );
+const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+scene.add( plane );
+plane.rotation.x = 0.9;
+plane.position.z = -1.93; 
+plane.position.y = 4.5; 
+
+const planeGeometry2 = new THREE.PlaneGeometry( 5, 5 );
+const planeMaterial2 = new THREE.MeshBasicMaterial( {color: 0x000000, side: THREE.DoubleSide} );
+const plane2 = new THREE.Mesh( planeGeometry2, planeMaterial2 );
+scene.add( plane2 );
+plane2.position.y = 4.5; 
+plane2.rotation.x = -0.9;
+plane2.position.z = 1.93;
+
+
 function animate() {
   requestAnimationFrame( animate );
   renderer.render( scene, camera );
