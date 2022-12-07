@@ -11,7 +11,17 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 //orbit controls
-const controls = new OrbitControls( camera, renderer.domElement );
+const controls = new OrbitControls( camera, renderer.domElement );// this is for orbit controls  this helps to move the camera around the scene 
+
+// light
+const light = new THREE.PointLight( 0xffffff, 1, 100 );
+light.position.set( 0, 0, 0 );
+scene.add( light );
+
+//ambient light
+const ambientLight = new THREE.AmbientLight( 0xffffff, 0.5 );
+scene.add( ambientLight ); 
+
 
 // creating sphere geometry
 const loader = new THREE.TextureLoader();
