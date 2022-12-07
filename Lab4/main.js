@@ -26,7 +26,7 @@ scene.add( ambientLight );
 
 // creating sphere geometry
 const loader = new THREE.TextureLoader();
-const texture = loader.load('textures/fantasy.webp');
+const texture = loader.load('public/textures/fantasy.webp');
 const geometry = new THREE.SphereGeometry( 80, 32, 32 ); //radius, width segments, height segments
 const material = new THREE.MeshBasicMaterial( {color: 0xffffff } );
 material.map = texture;
@@ -37,7 +37,7 @@ scene.add( sphere );
 //water ground
 
 const loaderWater = new THREE.TextureLoader();
-const textureWater = loaderWater.load('textures/water.webp');
+const textureWater = loaderWater.load('public/textures/water.webp');
 const waterGeometry = new THREE.BoxGeometry( 50, 0.25, 50 );
 const waterMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff} );
 waterMaterial.map = textureWater;
@@ -47,7 +47,7 @@ water.position.y = -4;
 
 //first floor
 const loaderWood = new THREE.TextureLoader();
-const textureWood = loaderWater.load('textures/wood.webp');
+const textureWood = loaderWater.load('public/textures/wood.webp');
 const houseGeometry = new THREE.BoxGeometry( 5, 3, 5 );
 const houseMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
 houseMaterial.map = textureWood;
@@ -65,7 +65,7 @@ house2.rotation.y = 0.7;
 
 //third floor 
 const loaderWood2 = new THREE.TextureLoader();
-const textureWood2 = loaderWater.load('textures/wood.webp');
+const textureWood2 = loaderWater.load('public/textures/wood.webp');
 const houseGeometry3 = new THREE.BoxGeometry( 5, 3, 5); 
 const houseMaterial3 = new THREE.MeshBasicMaterial( { color: 0xffffff } );
 houseMaterial3.map = textureWood2;
@@ -93,7 +93,7 @@ plane2.position.z = 1.93;
 //White board
 const boardGeometry = new THREE.BoxGeometry( 0.1, 5, 5 );
 const boardMaterial = new THREE.MeshBasicMaterial( {color: 0xffffff } );
-const BoardTexture = loader.load('textures/Zienab.webp');
+const BoardTexture = loader.load('public/textures/Zienab.webp');
 const whiteBoard = new THREE.Mesh( boardGeometry, boardMaterial );
 whiteBoard.material.map = BoardTexture;
 scene.add( whiteBoard );
@@ -101,7 +101,7 @@ whiteBoard.position.y = -1.5;
 whiteBoard.position.x = -1.5;
 whiteBoard.position.z = -5.5;
 
-const daimondTexture = new THREE.TextureLoader().load('textures/light2.webp');
+const daimondTexture = new THREE.TextureLoader().load('public/textures/light2.webp');
 
 // power diamonds 
 const addDiamond = (x,y,z) => {
@@ -131,7 +131,7 @@ for (let i = 0; i < 20; i++) {
 let guardianBird; 
 const gltfLoader = new GLTFLoader();// liever van boven defineren en dan pas aanroepen
       
-  gltfLoader.load('models/my_animated_ho-oh/scene.gltf', (gltf) => {
+  gltfLoader.load('public/models/my_animated_ho-oh.glb', (gltf) => {
     guardianBird= gltf.scene;
     console.log(gltf);
     scene.add(gltf.scene);
