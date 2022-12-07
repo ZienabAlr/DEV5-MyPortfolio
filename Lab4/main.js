@@ -45,4 +45,10 @@ scene.add( water );
 water.position.y = -4;
 
 
+function animate() {
+  requestAnimationFrame( animate );
+  renderer.render( scene, camera );
+}
+animate();
 
+camera.position.z = 10;
