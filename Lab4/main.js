@@ -44,6 +44,15 @@ const water = new THREE.Mesh( waterGeometry, waterMaterial );
 scene.add( water );
 water.position.y = -4;
 
+//first floor
+const loaderWood = new THREE.TextureLoader();
+const textureWood = loaderWater.load('textures/wood.webp');
+const houseGeometry = new THREE.BoxGeometry( 5, 3, 5 );
+const houseMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+houseMaterial.map = textureWood;
+const house = new THREE.Mesh( houseGeometry, houseMaterial );
+scene.add( house );
+house.position.y = 2.5;
 
 function animate() {
   requestAnimationFrame( animate );
