@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three';// importing three.js library
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'; 
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 //creating a scene and camera
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -126,6 +127,15 @@ for (let i = 0; i < 20; i++) {
   const z = Math.random() * 30* sign;
   addDiamond(x, y, z);
 }
+
+let guardianBird; 
+const gltfLoader = new GLTFLoader();// liever van boven defineren en dan pas aanroepen
+      
+  gltfLoader.load('models/my_animated_ho-oh/scene.gltf', (gltf) => {
+    guardianBird= gltf.scene;
+    console.log(gltf);
+    scene.add(gltf.scene);
+  });
 
 function animate() {
   requestAnimationFrame( animate );
