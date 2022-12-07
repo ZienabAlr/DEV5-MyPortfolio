@@ -100,7 +100,7 @@ whiteBoard.position.y = -1.5;
 whiteBoard.position.x = -1.5;
 whiteBoard.position.z = -5.5;
 
-
+// power diamonds 
 const addDiamond = (x,y,z) => {
 
   const diamondGeometry = new THREE.IcosahedronGeometry( 1, 0 );
@@ -110,6 +110,20 @@ const addDiamond = (x,y,z) => {
   diamond.position.set(x, y, z); // positie van de diamant
 
 }
+
+for (let i = 0; i < 20; i++) {
+  //random sign for x and z
+  let sign = Math.random() < 0.5 ? 1 : -1;
+  const x = Math.random() * 30* sign; // 30 is the max distance from the center of the scene // random x position between -10 and 10
+
+  sign = Math.random() < 0.5 ? 1 : 1.6;//random sign for y and z   < 0.5 ? 1 : -1; betekent dat er een 50% kans is dat het 1 is en een 50% kans dat het -1 is
+  const y = Math.random() * 30* sign; // random y position between -10 and 10   
+  
+  sign = Math.random() < 0.5 ? 1 : -1;
+  const z = Math.random() * 30* sign;
+  addDiamond(x, y, z);
+}
+
 function animate() {
   requestAnimationFrame( animate );
   renderer.render( scene, camera );
