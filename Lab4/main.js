@@ -130,6 +130,14 @@ for (let i = 0; i < 20; i++) {
 function animate() {
   requestAnimationFrame( animate );
   renderer.render( scene, camera );
+
+  scene.children.forEach((child) => {
+    if (child instanceof THREE.Mesh && child != sphere && child != water && child != house && child != house2 && child != house3 && child != plane && child != plane2 && child != whiteBoard) {
+      child.rotation.y += 0.04;
+      child.rotation.x += 0.04;
+      child.rotation.z += 0.04;
+    }
+  });
 }
 animate();
 
