@@ -138,6 +138,30 @@ const gltfLoader = new GLTFLoader();// liever van boven defineren en dan pas aan
 
     guardianBird.scale.set(0.02, 0.02, 0.02);
     guardianBird.position.set(1, 15, 1);
+
+    const mixer = new THREE.AnimationMixer(gltf.scene); // First, the AnimationMixer allows us to turn a static object into an animated object
+     //  the AnimationAction connects a clip to the object and allows us to control it using actions such as play, pause, loop, reset, and so on.
+     //Unlike the other animation system classes, we never create an action directly. Instead, we’ll use AnimationMixer.clipAction, which ensures the action is cached by the mixer.
+    const action = mixer.clipAction(gltf.animations[0]); // create an action for the animation action is a class // 0 is the first animation in the array // 1 is the second animation in the array // 2 is the third animation in the array 
+
+    action.play(); // play the animation
+    
+
+    const clock = new THREE.Clock(); // create a clock for the animation clock is a class  // clock is a class that keeps track of time 
+  
+    const tick = () => { // create a tick function for the animation tick is a function // tick is a function that runs every frame 
+      // add time scale to the animation
+      action.setEffectiveTimeScale(0.5); // 0.5 is half the speed of the original animation // 2 is twice the speed of the original animation
+      const elapsedTime = clock.getElapsedTime(); // here we say that the elapsed time is equal to the clock's elapsed time // the clock's elapsed time is the time that has passed since the clock was created // the clock's elapsed time is the time that has passed since the clock was created
+     // update the bird
+      mixer.update(elapsedTime); // update the mixer with the elapsed time // mixer is a class that updates the animation
+      // call tick again on the next frame
+      window.requestAnimationFrame(tick);
+     
+    }
+    tick();
+
+
   });
 
 function animate() {
